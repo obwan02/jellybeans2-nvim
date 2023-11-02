@@ -1,5 +1,5 @@
 local hsl = require('lush').hsl
-local theme = require('lush_theme.jellybeans')
+local theme = require('lush_theme.jellybeans2')
 
 local foreground = hsl("#e8e8d3")
 local background = hsl("#151515")

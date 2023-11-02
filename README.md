@@ -1,6 +1,16 @@
-Jellybeans-nvim: a lua port of jellybeans for neovim
+Jellybeans2-nvim: A modified version of jellybeans-nvim
 ===
 
+**NOTE: This fork has not changed much of jellybeans-nvim**
+Please check out the [original colorscheme](github.com/metalelf0/jellybeans-nvim)
+
+Main Differences
+===
+- Identifiers (i.e. variables) now use the foreground color,
+  to avoid over-coloring code.
+
+
+*NOTE: Colors may differ from screenshot!!!*
 ![Screenshot](scrot.png)
 
 Instructions
@@ -8,30 +18,19 @@ Instructions
 
 **Note**: This colorscheme requires at least Neovim 0.5 (it works fine on current master).
 
-Add to your `init.lua` (this is using
-[paq-nvim](https://github.com/savq/paq-nvim), adjust to your package manager):
+```lua
+require('packer').startup(function(use)
+  -- ...
+  use 'rktjmp/lush.nvim'
+  use 'obwan02/jellybeans2-nvim'
 
-```
-local paq = require('paq-nvim').paq
+end)
 
-paq { 'rktjmp/lush.nvim'}
-paq { 'metalelf0/jellybeans-nvim' }
-
-cmd('colorscheme jellybeans-nvim')
+cmd('colorscheme jellybeans2-nvim')
 ```
 
 Notes
 ---
-
-* I directly mapped original colors as strictly as possible; right now, only
-  colors already defined in the original colorscheme have been mapped, to get a
-  colorscheme as close as possible to the original one. I'll consider adding
-  more highlight groups for plugins etc. if requested;
-
-* Treesitter support is basic: it uses the default links defined in
-  `nvim-treesitter`, and I didn't customize the treesitter groups. Please
-  submit a PR or contact me on reddit if you think anything should be changed /
-  improved;
 
 * this was built with [lush.nvim](http://git.io/lush.nvim); for more
   information on Lush and a helper script to setup your repo clone.
